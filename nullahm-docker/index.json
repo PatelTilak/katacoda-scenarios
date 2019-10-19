@@ -1,0 +1,46 @@
+{
+  "title": "Docker Practice",
+  "description": "This scenario is created by TiLAK for giving some Hands-On to Null Ahmedabad Meet participants",
+  "difficulty": "Beginner",
+  "time": "20 minutes",
+  "details": {
+    "steps": [
+      {
+        "title": "Docker Images",
+        "text": "step1.md"
+      },
+      {
+        "title": "Spawn a Hello-World Container",
+        "text": "step2.md"
+      },
+      {
+        "title": "Interact with alpine linux Container",
+        "text": "step3.md"
+      },
+      {
+        "title": "Run nginx server using Docker",
+        "text": "step4.md"
+      },
+      {
+        "title": "Spawn container with Restricted memory",
+        "text": "step5.md"
+      },
+      {
+        "title": "Practice Assignment",
+        "text": "step6.md"
+      }
+    ],
+    "intro": {
+      "text": "intro.md"
+    },
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "environment": {
+    "uilayout": "terminal"
+  },
+  "backend": {
+    "imageid": "ubuntu1804"
+  }
+}

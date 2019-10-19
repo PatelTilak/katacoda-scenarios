@@ -21,8 +21,11 @@ Now that we have static website ready, Lets spawn nginx container
 `docker run --name nginx -p 80:80 -v "$PWD"/html:/usr/share/nginx/html:ro nginx`{{copy}}
 
 Understanding the command:
+
 --name specifies the name of created container
+
 -p <Host_Port>:<Container_Port> Maps Container's Port Container_Port with Host's Port Host_Port
+
 -v <Host_Directory>:<Container_Directory>:<CommaSeperated_Options> Maps Container's Directory (Volume) Container_Directory with Host's Directory Host_Directory. ro in CommaSeperated_Options indicated that the volume shoud be mounted as Read-Only volume
 
 

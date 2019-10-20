@@ -24,9 +24,9 @@ Understanding the command:
 
 **--name** specifies the name of created container
 
-**-p <Host_Port>:<Container_Port>** Maps Container's Port Container_Port with Host's Port Host_Port
+**-p &lt;Host_Port&gt;:&lt;Container_Port&gt;** Maps Container's Port Container_Port with Host's Port Host_Port
 
-**-v <Host_Directory>:<Container_Directory>:<CommaSeperated_Options>** Maps Container's Directory (Volume) Container_Directory with Host's Directory Host_Directory. ro in CommaSeperated_Options indicated that the volume shoud be mounted as Read-Only volume
+**-v &lt;Host_Directory>:&lt;Container_Directory>:&lt;CommaSeperated_Options&gt;** Maps Container's Directory (Volume) Container_Directory with Host's Directory Host_Directory. ro in CommaSeperated_Options indicated that the volume shoud be mounted as Read-Only volume
 
 
 View the Webpage at: 

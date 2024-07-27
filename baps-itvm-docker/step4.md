@@ -106,10 +106,15 @@ Lets start multiple nginx servers using different ports
 `docker run --name nginx5 -p 8085:80 -v "$PWD"/html:/usr/share/nginx/html:ro nginx`{{copy}}
 
 View the Webpages at: 
+
 {{TRAFFIC_HOST1_8081}}
+
 {{TRAFFIC_HOST1_8082}}
+
 {{TRAFFIC_HOST1_8083}}
+
 {{TRAFFIC_HOST1_8084}}
+
 {{TRAFFIC_HOST1_8085}}
 
 Was it Hard ?? Imagine the efforts you will have to put if you had to do it without Docker...

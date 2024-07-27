@@ -42,8 +42,8 @@ Now Lets create new nginx container which is accesible via port 8080 of host
 `docker run --name nginx -p 8080:80 -v "$PWD"/html:/usr/share/nginx/html:ro nginx`{{copy}}
 
 View the Webpage at: 
-https://[[HOST_SUBDOMAIN]]-8080-[[KATACODA_HOST]].environments.katacoda.com
-[ACCESS NGINX on Port 8080]({{TRAFFIC_HOST1_8080}})
+{{TRAFFIC_HOST1_8080}}
+
 Lets stop the Container & Remove it
 
 `docker container stop nginx`{{copy}}
@@ -59,7 +59,7 @@ Lets Spawn container using above two arguments
 `docker run --name nginx -p 80:80 -v "$PWD"/html:/usr/share/nginx/html:ro --rm -d nginx`{{copy}}
 
 View the Webpage at: 
-https://[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com
+{{TRAFFIC_HOST1_80}}
 
 Lets start interactive terminal with the container by executing `/bin/bash` of Container
 
@@ -106,11 +106,11 @@ Lets start multiple nginx servers using different ports
 `docker run --name nginx5 -p 8085:80 -v "$PWD"/html:/usr/share/nginx/html:ro nginx`{{copy}}
 
 View the Webpages at: 
-https://[[HOST_SUBDOMAIN]]-8081-[[KATACODA_HOST]].environments.katacoda.com
-https://[[HOST_SUBDOMAIN]]-8082-[[KATACODA_HOST]].environments.katacoda.com
-https://[[HOST_SUBDOMAIN]]-8083-[[KATACODA_HOST]].environments.katacoda.com
-https://[[HOST_SUBDOMAIN]]-8084-[[KATACODA_HOST]].environments.katacoda.com
-https://[[HOST_SUBDOMAIN]]-8085-[[KATACODA_HOST]].environments.katacoda.com
+{{TRAFFIC_HOST1_8081}}
+{{TRAFFIC_HOST1_8082}}
+{{TRAFFIC_HOST1_8083}}
+{{TRAFFIC_HOST1_8084}}
+{{TRAFFIC_HOST1_8085}}
 
 Was it Hard ?? Imagine the efforts you will have to put if you had to do it without Docker...
 

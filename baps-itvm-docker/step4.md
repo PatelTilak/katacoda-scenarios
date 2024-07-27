@@ -29,8 +29,7 @@ Understanding the command:
 **-v &lt;Host_Directory>:&lt;Container_Directory>:&lt;CommaSeperated_Options&gt;** Maps Container's Directory (Volume) Container_Directory with Host's Directory Host_Directory. ro in CommaSeperated_Options indicated that the volume shoud be mounted as Read-Only volume
 
 
-View the Webpage at: 
-https://[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com
+View the Webpage at: {{TRAFFIC_HOST1_80}}
 
 Lets stop the Container & Remove it
 
@@ -44,7 +43,7 @@ Now Lets create new nginx container which is accesible via port 8080 of host
 
 View the Webpage at: 
 https://[[HOST_SUBDOMAIN]]-8080-[[KATACODA_HOST]].environments.katacoda.com
-
+[ACCESS NGINX on Port 8080]({{TRAFFIC_HOST1_8080}})
 Lets stop the Container & Remove it
 
 `docker container stop nginx`{{copy}}

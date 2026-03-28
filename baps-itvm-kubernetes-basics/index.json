@@ -26,8 +26,12 @@
         "text": "step5.md"
       },
       {
-        "title": "Self-Healing",
+        "title": "Export as YAML",
         "text": "step6.md"
+      },
+      {
+        "title": "Self-Healing",
+        "text": "step7.md"
       }
     ],
     "intro": {

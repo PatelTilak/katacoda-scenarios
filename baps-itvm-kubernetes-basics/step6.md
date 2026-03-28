@@ -1,43 +1,41 @@
-### Self-Healing Demo
+### Export Resources as YAML
 
-Now for something interesting. Instead of deleting the Pod, lets stop the nginx process **inside** the container and see how Kubernetes reacts.
+Everything in Kubernetes can be expressed as YAML. You can export any running resource to see its full definition — useful for saving configs, version-controlling them, or reapplying them on another cluster.
 
-First, open a second terminal and watch the Pods continuously
+### Export the Deployment
 
-`kubectl get pods -w`{{copy}}
+`kubectl get deployment nginx -o yaml`{{copy}}
 
-Now in this terminal, stop nginx inside the running Pod
+This prints the full YAML definition of the Deployment. Notice it includes fields like `status` and `resourceVersion` that are added by Kubernetes at runtime.
 
-`kubectl exec <pod-name> -- nginx -s stop`{{copy}}
+To save it to a file
 
-Watch the second terminal. You will see the Pod status change briefly and the **RESTARTS** counter go up. Kubernetes detected the container failure and restarted it automatically.
+`kubectl get deployment nginx -o yaml > nginx-deployment.yaml`{{copy}}
 
-### Confirm the Restart
+`cat nginx-deployment.yaml`{{copy}}
 
-Check logs again — they will show nginx starting fresh, confirming the container was restarted
+### Export the Service
 
-`kubectl logs <pod-name>`{{copy}}
+`kubectl get service nginx -o yaml`{{copy}}
 
-Now describe the Pod again
+Save it to a file
 
-`kubectl describe pod <pod-name>`{{copy}}
+`kubectl get service nginx -o yaml > nginx-service.yaml`{{copy}}
 
-Look at two things:
-- **Restart Count** — now shows 1
-- **Events** — shows the container was killed and started again
+`cat nginx-service.yaml`{{copy}}
 
-This is **self-healing**. Kubernetes ensures your application stays running even when the process inside crashes.
+### Combined Export
 
-### What about deleting the Pod itself?
+Instead of two separate files, you can export both resources together in a single YAML file separated by `---`
 
-We saw Kubernetes restart a crashed container. What if someone deletes the entire Pod?
+`kubectl get deployment,service nginx -o yaml > nginx.yaml`{{copy}}
 
-`kubectl delete pod <pod-name>`{{copy}}
+`cat nginx.yaml`{{copy}}
 
-List Pods immediately
+The combined file has both resources in sequence. You can apply the entire file at once on any cluster
 
-`kubectl get pods`{{copy}}
+`kubectl apply -f nginx.yaml`{{copy}}
 
-A brand new Pod was created with a new name. The Deployment noticed one Pod was missing and replaced it. There is no way to permanently remove a Pod managed by a Deployment — unless you delete the Deployment itself.
+This is how teams store their application definitions in source control and redeploy them consistently across environments.
 
 ### This completes Step 6
